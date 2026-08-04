@@ -1,14 +1,31 @@
+import org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension
+
 plugins {
-    kotlin("jvm") version "2.0.21"
+    alias(libs.plugins.kotlin.jvm) apply false
+    id("idea")
 }
 
-group = "kofeychi"
-version = "1.0-SNAPSHOT"
-
-repositories {
-    mavenCentral()
+idea {
+    module {
+        isDownloadSources = true
+        isDownloadJavadoc = true
+    }
 }
 
-kotlin {
-    jvmToolchain(21)
+allprojects {
+    apply(plugin = "org.jetbrains.kotlin.jvm")
+
+    group = property("group") as String
+    version = property("version") as String
+
+    repositories {
+        mavenCentral()
+    }
+
+    configure<KotlinJvmProjectExtension> {
+        jvmToolchain(26)
+        compilerOptions {
+            freeCompilerArgs.add("-opt-in=kotlin.RequiresOptIn")
+        }
+    }
 }
