@@ -1,7 +1,9 @@
 package kofeychi.klua.util
 
 interface IVisitable<out S : IVisitable<S>> {
-    fun visit(visitFunction: (S) -> Unit)
+    fun visit(visitFunction: (S) -> Unit) {
+        visitFunction(this as S)
+    }
 }
 
 interface ISink<in T> {
