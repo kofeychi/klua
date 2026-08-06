@@ -1,14 +1,13 @@
-package kofeychi.klua.lua.ast.function
+package kofeychi.klua.lua.ast.lang
 
-import kofeychi.klua.lua.ast.LuaArguments
 import kofeychi.klua.lua.ast.LuaExpression
 import kofeychi.klua.lua.sink.LuaSinkContext
 import kofeychi.klua.util.StringSink
 
-data class LuaStandardFunctionCall(
-    val callee: LuaExpression,
-    val arguments: LuaArguments
-) : LuaFunctionCall {
+data class LuaElseIfClause(
+    val condition: LuaExpression,
+    val thenBlock: LuaBlock,
+) : LuaNode {
     override fun writeTo(sink: StringSink, context: LuaSinkContext) {
         TODO("Not yet implemented")
     }

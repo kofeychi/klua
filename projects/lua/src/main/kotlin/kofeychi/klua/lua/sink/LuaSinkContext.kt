@@ -1,4 +1,6 @@
 package kofeychi.klua.lua.sink
 
-interface LuaSinkContext {
+// TODO: AST context and Print context
+sealed interface LuaSinkContext {
+    val isPrint: Boolean
 }
