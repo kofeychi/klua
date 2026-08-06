@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.buildconfig)
     id("idea")
+    kotlin("kapt")
 }
 
 idea {
@@ -17,19 +18,18 @@ repositories {
 }
 
 dependencies {
-    fileTree("lib").forEach {
-        implementation(files(it))
-    }
     implementation(kotlin("reflect"))
+    implementation(libs.kotlin.compiler)
     compileOnly("com.google.auto.service:auto-service-annotations:1.1.1")
     annotationProcessor("com.google.auto.service:auto-service:1.1.1")
+    kapt("com.google.auto.service:auto-service:1.1.1")
 }
 
 buildConfig {
     className("KluaCompilerBuildData")
     packageName("kofeychi.klua.compiler")
 
-    buildConfigField("String","PLUGIN_ID","\"klua\"")
+    buildConfigField("String", "PLUGIN_ID", "\"klua\"")
 }
 
 kotlin {

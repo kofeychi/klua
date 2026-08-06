@@ -1,3 +1,8 @@
+pluginManagement {
+    plugins {
+        kotlin("kapt") version "2.4.10"
+    }
+}
 dependencyResolutionManagement {
     repositories {
         mavenLocal()
