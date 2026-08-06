@@ -1,3 +1,12 @@
+dependencyResolutionManagement {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven {
+            url = uri("https://jetbrains.space")
+        }
+    }
+}
 plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version "0.8.0"
 }
@@ -5,4 +14,6 @@ plugins {
 
 rootProject.name = "klua"
 
-include(":lua")
+include(":projects:lua")
+include(":projects:compiler")
+include(":projects:plugin")
