@@ -33,7 +33,7 @@ buildConfig {
 }
 
 kotlin {
-    jvmToolchain(26)
+    jvmToolchain(21)
     compilerOptions {
         freeCompilerArgs.add("-opt-in=kotlin.RequiresOptIn")
     }

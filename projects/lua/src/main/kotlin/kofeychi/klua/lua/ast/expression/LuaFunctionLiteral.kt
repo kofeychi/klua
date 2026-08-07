@@ -1,6 +1,7 @@
 package kofeychi.klua.lua.ast.expression
 
 import kofeychi.klua.lua.ast.LuaExpression
+import kofeychi.klua.lua.ast.lang.LuaFunctionBody
 import kofeychi.klua.lua.sink.LuaSinkContext
 import kofeychi.klua.util.StringSink
 

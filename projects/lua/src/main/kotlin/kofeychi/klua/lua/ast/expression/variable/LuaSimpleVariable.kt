@@ -8,10 +8,10 @@ data class LuaSimpleVariable(
     val name: String,
 ) : LuaVariable {
     override fun writeTo(sink: StringSink, context: LuaSinkContext) {
-        TODO("Not yet implemented")
+        sink.write(name)
     }
 
     override fun writeTo(sink: StringSink) {
-        TODO("Not yet implemented")
+        sink.write(name)
     }
 }

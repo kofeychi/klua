@@ -10,10 +10,16 @@ data class LuaTableAccessVariable(
     val key: LuaExpression,
 ) : LuaVariable {
     override fun writeTo(sink: StringSink, context: LuaSinkContext) {
-        TODO("Not yet implemented")
+        table.writeTo(sink, context)
+        sink.write("[")
+        key.writeTo(sink, context)
+        sink.write("]")
     }
 
     override fun writeTo(sink: StringSink) {
-        TODO("Not yet implemented")
+        table.writeTo(sink)
+        sink.write("[")
+        key.writeTo(sink)
+        sink.write("]")
     }
 }

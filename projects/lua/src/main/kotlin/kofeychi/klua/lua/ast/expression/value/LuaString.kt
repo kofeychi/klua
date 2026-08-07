@@ -4,6 +4,7 @@ import kofeychi.klua.lua.ast.expression.LuaValue
 import kofeychi.klua.lua.sink.LuaSinkContext
 import kofeychi.klua.util.StringSink
 
+// assumes the value it holds is escaped
 data class LuaString(
     val luaValue: String
 ) : LuaValue {

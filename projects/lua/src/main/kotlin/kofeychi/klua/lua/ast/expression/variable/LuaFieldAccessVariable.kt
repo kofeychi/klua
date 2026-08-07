@@ -10,11 +10,15 @@ data class LuaFieldAccessVariable(
     val table: LuaExpression,
 ) : LuaVariable {
     override fun writeTo(sink: StringSink, context: LuaSinkContext) {
-        TODO("Not yet implemented")
+        table.writeTo(sink,context)
+        sink.write(".")
+        sink.write(field)
     }
 
     override fun writeTo(sink: StringSink) {
-        TODO("Not yet implemented")
+        table.writeTo(sink)
+        sink.write(".")
+        sink.write(field)
     }
 
 }
